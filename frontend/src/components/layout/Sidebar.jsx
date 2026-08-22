@@ -12,6 +12,10 @@ const Sidebar = ({ isOpen, onClose }) => {
         { path: '/student/dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { path: '/student/courses', label: 'My Courses', icon: BookOpen },
       ]
+    : role === 'ADMIN'
+    ? [
+        { path: '/admin/dashboard', label: 'Course Management', icon: LayoutDashboard },
+      ]
     : [
         { path: '/mentor/dashboard', label: 'Dashboard', icon: LayoutDashboard },
       ];

@@ -23,6 +23,8 @@ const Login = () => {
         navigate('/student/dashboard');
       } else if (user.role === 'MENTOR') {
         navigate('/mentor/dashboard');
+      } else if (user.role === 'ADMIN') {
+        navigate('/admin/dashboard');
       }
     } catch (err) {
       setErrMessage(err.message || 'Login failed. Please check credentials.');
