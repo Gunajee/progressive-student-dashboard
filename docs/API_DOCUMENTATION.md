@@ -250,3 +250,73 @@ The Progressive Student Dashboard backend exposes a secured JSON REST API.
 *   **URL:** `/api/mentor/export/students.csv`
 *   **Authentication:** JWT (Role = `MENTOR`)
 *   **Response (200 OK):** Yields file attachment stream (`text/csv`).
+
+---
+
+## 5. Admin Course Management Endpoints
+
+### List All Courses
+*   **Method:** `GET`
+*   **URL:** `/api/admin/courses`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### Get Course By ID
+*   **Method:** `GET`
+*   **URL:** `/api/admin/courses/{id}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### Create Course
+*   **Method:** `POST`
+*   **URL:** `/api/admin/courses`
+*   **Authentication:** JWT (Role = `ADMIN`)
+*   **Request Body:**
+    ```json
+    {
+      "title": "Advanced React Patterns",
+      "category": "Frontend",
+      "difficulty": "ADVANCED",
+      "estimatedHours": 8,
+      "description": "Master hooks, context API, and performance optimization."
+    }
+    ```
+
+### Update Course
+*   **Method:** `PUT`
+*   **URL:** `/api/admin/courses/{id}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### Delete Course
+*   **Method:** `DELETE`
+*   **URL:** `/api/admin/courses/{id}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### List Lessons for Course
+*   **Method:** `GET`
+*   **URL:** `/api/admin/lessons/course/{courseId}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### Create Lesson (with Markdown Content)
+*   **Method:** `POST`
+*   **URL:** `/api/admin/lessons/course/{courseId}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+*   **Request Body:**
+    ```json
+    {
+      "title": "Custom Hooks",
+      "description": "Building reusable stateful logic.",
+      "orderIndex": 1,
+      "estimatedMinutes": 30,
+      "content": "# Custom Hooks\nLearn how to encapsulate component logic into custom hooks..."
+    }
+    ```
+
+### Update Lesson
+*   **Method:** `PUT`
+*   **URL:** `/api/admin/lessons/{id}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+
+### Delete Lesson
+*   **Method:** `DELETE`
+*   **URL:** `/api/admin/lessons/{id}`
+*   **Authentication:** JWT (Role = `ADMIN`)
+

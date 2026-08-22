@@ -27,6 +27,11 @@ A professional full-stack web application that tracks student progress across co
 *   **Student Profile Monitoring:** Complete overview of individual student analytics, trends, activity histories, and course progression.
 *   **RFC-Compliant CSV Export:** One-click spreadsheet exports detailing student progress, status metrics, and study hours.
 
+### Admin Course Management
+*   **Dynamic Course Management:** Create, update, and delete courses with customizable categories, difficulty levels, and duration estimates.
+*   **Syllabus & Lesson Management:** Reorder and manage lessons for any course dynamically.
+*   **Rich Text / Markdown Editor:** Live split-pane editor to author lesson content in GitHub-Flavored Markdown. Rendered seamlessly on the student side.
+
 ---
 
 ## Technology Stack
@@ -131,11 +136,14 @@ Detailed requirements, environment parameters, and build commands are fully docu
 
 ## Demo Seed Credentials
 
+*   **Admin Console:**
+    *   Email: `admin@example.com`
+    *   Password: `password`
 *   **Mentor Console:**
     *   Email: `mentor@example.com`
     *   Password: `password`
 *   **Student Console:**
-    *   Students can register dynamic accounts directly from the UI sign-up page (`/register`), which will automatically enroll them in the baseline `React Basics` course and assign them to the default mentor.
+    *   Students can register dynamic accounts directly from the UI sign-up page (`/register`), which will automatically enroll them in the baseline `React Fundamentals` course and assign them to the default mentor.
 
 ---
 
