@@ -23,6 +23,8 @@ export const ProtectedRoute = ({ allowedRoles }) => {
       return <Navigate to="/student/dashboard" replace />;
     } else if (currentUser.role === 'MENTOR') {
       return <Navigate to="/mentor/dashboard" replace />;
+    } else if (currentUser.role === 'ADMIN') {
+      return <Navigate to="/admin/dashboard" replace />;
     }
   }
 
@@ -45,6 +47,8 @@ export const PublicRoute = () => {
       return <Navigate to="/student/dashboard" replace />;
     } else if (currentUser.role === 'MENTOR') {
       return <Navigate to="/mentor/dashboard" replace />;
+    } else if (currentUser.role === 'ADMIN') {
+      return <Navigate to="/admin/dashboard" replace />;
     }
   }
 

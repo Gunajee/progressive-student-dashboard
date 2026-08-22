@@ -14,6 +14,7 @@ public class LessonDto {
     private String description;
     private Integer orderIndex;
     private Integer estimatedMinutes;
+    private String content;
     private LessonProgressStatus status;
     private Integer timeSpentMinutes;
 }

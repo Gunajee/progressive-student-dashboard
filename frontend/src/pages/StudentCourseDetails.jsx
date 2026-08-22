@@ -4,6 +4,7 @@ import studentService from '../services/studentService';
 import LoadingState from '../components/common/LoadingState';
 import ErrorState from '../components/common/ErrorState';
 import { ArrowLeft, BookOpen, Clock, Award, Play, CheckCircle, Flame } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const StudentCourseDetails = () => {
   const { courseId } = useParams();
@@ -169,7 +170,7 @@ const StudentCourseDetails = () => {
             return (
               <div 
                 key={lesson.id}
-                className={`bg-white border rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 ${
+                className={`bg-white border rounded-2xl p-5 flex flex-wrap sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 ${
                   status === 'COMPLETED'
                     ? 'border-emerald-100 bg-emerald-50/5'
                     : status === 'IN_PROGRESS'
@@ -250,6 +251,15 @@ const StudentCourseDetails = () => {
                     </span>
                   )}
                 </div>
+                
+                {/* Lesson Markdown Content (Shown if in progress or completed, and content exists) */}
+                {lesson.content && (status === 'IN_PROGRESS' || status === 'COMPLETED') && (
+                  <div className="w-full mt-6 pt-6 border-t border-gray-100 sm:col-span-2">
+                    <div className="prose prose-sm prose-indigo max-w-none text-gray-700">
+                      <ReactMarkdown>{lesson.content}</ReactMarkdown>
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}

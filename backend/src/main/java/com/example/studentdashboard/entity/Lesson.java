@@ -36,6 +36,9 @@ public class Lesson {
     @Column(name = "estimated_minutes", nullable = false)
     private Integer estimatedMinutes;
 
+    @Column(columnDefinition = "TEXT")
+    private String content;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

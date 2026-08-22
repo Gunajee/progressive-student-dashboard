@@ -63,6 +63,7 @@ public class LessonServiceImpl implements LessonService {
                 .description(lesson.getDescription())
                 .orderIndex(lesson.getOrderIndex())
                 .estimatedMinutes(lesson.getEstimatedMinutes())
+                .content(lesson.getContent())
                 .status(status)
                 .timeSpentMinutes(timeSpent)
                 .build();

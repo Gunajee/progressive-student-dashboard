@@ -10,6 +10,9 @@ import StudentCourses from './pages/StudentCourses';
 import StudentCourseDetails from './pages/StudentCourseDetails';
 import MentorDashboard from './pages/MentorDashboard';
 import MentorStudentDetails from './pages/MentorStudentDetails';
+import AdminDashboard from './pages/AdminDashboard';
+import CourseEditor from './pages/CourseEditor';
+import LessonEditor from './pages/LessonEditor';
 
 function App() {
   return (
@@ -36,6 +39,17 @@ function App() {
             <Route element={<MainLayout />}>
               <Route path="/mentor/dashboard" element={<MentorDashboard />} />
               <Route path="/mentor/students/:studentId" element={<MentorStudentDetails />} />
+            </Route>
+          </Route>
+
+          {/* Admin Protected routes */}
+          <Route element={<ProtectedRoute allowedRoles={['ADMIN']} />}>
+            <Route element={<MainLayout />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/courses/new" element={<CourseEditor />} />
+              <Route path="/admin/courses/:courseId/edit" element={<CourseEditor />} />
+              <Route path="/admin/courses/:courseId/lessons/new" element={<LessonEditor />} />
+              <Route path="/admin/lessons/:lessonId/edit" element={<LessonEditor />} />
             </Route>
           </Route>
 
